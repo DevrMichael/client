@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Login from './Login'; // Your login component
+import HRView from './HRView'; // Component for HR to view suggestions
+import SuggestionForm from './SuggestionForm'; // Component for users to submit suggestions
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Always render the SuggestionForm component for any user */}
+      <SuggestionForm />
+
+      {/* Conditionally render the Login or HRView component based on isAuthenticated state */}
+      {!isAuthenticated ? <Login onLogin={setIsAuthenticated} /> : <HRView />}
     </div>
   );
 }
