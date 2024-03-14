@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './Login';
-import HRView from './HRView';
-import SuggestionForm from './SuggestionForm';
+import Login from './Login/Login';
+import HRView from './HRView/HRView';
+import SuggestionForm from './SuggestionForm/SuggestionForm';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

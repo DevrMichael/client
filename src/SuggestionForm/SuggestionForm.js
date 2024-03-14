@@ -12,9 +12,9 @@ function SuggestionForm({ onLogout }) {
     try {
       await axios.post('http://localhost:3001/api/suggestions', { suggestion });
       setSuggestion('');
-      alert('Suggestion submitted successfully');
+      alert('Forslaget ble sendt inn vellykket');
     } catch (error) {
-      console.error('Failed to submit suggestion', error);
+      console.error('Kunne ikke sende inn forslag', error);
     }
   };
 
@@ -25,23 +25,23 @@ function SuggestionForm({ onLogout }) {
 
   return (
     <div className="form-container">
-      <h1>Anonymous Suggestion Box</h1>
+      <h1>Anonymt forslagsboks</h1>
       <form onSubmit={handleSubmit} className="suggestion-form">
         <textarea
           value={suggestion}
           onChange={(e) => setSuggestion(e.target.value)}
-          placeholder="Enter your suggestion"
+          placeholder="Skriv inn ditt forslag"
           required
         ></textarea>
         <button type="submit" className="submit-button">
-          Submit Suggestion
+          Send inn forslag
         </button>
         <button
           onClick={handleLogout}
           className="logout-button"
           data-testid="submit-button"
         >
-          Logout
+          Logg ut{' '}
         </button>{' '}
       </form>
     </div>

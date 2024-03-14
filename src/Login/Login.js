@@ -16,14 +16,14 @@ function Login({ onLogin }) {
         password,
       });
       if (response.data.isAuthenticated) {
-        alert('Login Successful');
+        alert('Innlogging vellykket');
         onLogin(true, response.data.role);
         response.data.role === 'hr' ? navigate('/hrview') : navigate('/');
       } else {
-        alert('Login Failed');
+        alert('Innlogging mislykket');
       }
     } catch (error) {
-      console.error('Login error', error);
+      console.error('Innloggingsfeil', error);
     }
   };
 
@@ -33,10 +33,10 @@ function Login({ onLogin }) {
 
   return (
     <div className="login-container">
-      <h1>Login</h1>
+      <h2>Logg Inn</h2>
       <form onSubmit={handleSubmit} className="login-form">
         <div>
-          <label data-testid="username-label">Username:</label>
+          <label data-testid="username-label">Brukernavn:</label>
           <input
             data-testid="username-input"
             type="text"
@@ -46,7 +46,7 @@ function Login({ onLogin }) {
           />
         </div>
         <div>
-          <label data-testid="password-label">Password:</label>
+          <label data-testid="password-label">Passord:</label>
           <input
             data-testid="password-input"
             type="password"
@@ -55,14 +55,14 @@ function Login({ onLogin }) {
             required
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Logg Inn</button>
       </form>
       <button
         onClick={handleBack}
         className="back-button"
         data-testid="submit-button"
       >
-        Back to Homepage
+        Tilbake til hjemmesiden
       </button>{' '}
     </div>
   );

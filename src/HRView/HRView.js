@@ -32,9 +32,9 @@ function HRView({ onLogout }) {
           data-testid="logout-button"
           className="logout-button"
         >
-          Logout
+          Logg Ut
         </button>
-        <h1>HR View: Employee Suggestions</h1>
+        <h1>HR Visning: Ansatteforslag</h1>
       </div>
       <ul className="suggestions-list">
         {suggestions.map((suggestion, index) => (
