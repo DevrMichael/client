@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Login({ onLogin }) {
+  const navigate = useNavigate();
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -15,12 +18,17 @@ function Login({ onLogin }) {
       if (response.data.isAuthenticated) {
         alert('Login Successful');
         onLogin(true); // Notify parent component
+        navigate('/hrview'); // Redirect to HR view
       } else {
         alert('Login Failed');
       }
     } catch (error) {
       console.error('Login error', error);
     }
+  };
+
+  const handleBack = () => {
+    navigate('/'); // Navigate back to the homepage
   };
 
   return (
@@ -47,6 +55,10 @@ function Login({ onLogin }) {
         </div>
         <button type="submit">Login</button>
       </form>
+      <button onClick={handleBack} className="back-button">
+        Back to Homepage
+      </button>{' '}
+      {/* Back to Homepage button */}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Login'; // Your login component
 import HRView from './HRView'; // Component for HR to view suggestions
 import SuggestionForm from './SuggestionForm'; // Component for users to submit suggestions
@@ -6,14 +7,30 @@ import SuggestionForm from './SuggestionForm'; // Component for users to submit 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  return (
-    <div>
-      {/* Always render the SuggestionForm component for any user */}
-      <SuggestionForm />
+  const logout = () => {
+    setIsAuthenticated(false); // Update the isAuthenticated state
+    // Optional: Redirect to login or another page
+  };
 
-      {/* Conditionally render the Login or HRView component based on isAuthenticated state */}
-      {!isAuthenticated ? <Login onLogin={setIsAuthenticated} /> : <HRView />}
-    </div>
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SuggestionForm />} />
+
+        <Route path="/login" element={<Login onLogin={setIsAuthenticated} />} />
+
+        <Route
+          path="/hrview"
+          element={
+            isAuthenticated ? (
+              <HRView onLogout={logout} />
+            ) : (
+              <Navigate replace to="/login" />
+            )
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

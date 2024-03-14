@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SuggestionForm() {
+  const navigate = useNavigate();
+
   const [suggestion, setSuggestion] = useState('');
 
   const handleSubmit = async (e) => {
@@ -13,6 +16,10 @@ function SuggestionForm() {
     } catch (error) {
       console.error('Failed to submit suggestion', error);
     }
+  };
+
+  const handleLogin = () => {
+    navigate('/login'); // Navigate to the login page
   };
 
   return (
@@ -27,6 +34,10 @@ function SuggestionForm() {
         ></textarea>
         <button type="submit">Submit Suggestion</button>
       </form>
+      <button onClick={handleLogin} className="login-button">
+        Login
+      </button>{' '}
+      {/* Login button */}
     </div>
   );
 }
