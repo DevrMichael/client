@@ -27,8 +27,10 @@ Dette prosjektet er en enkel webapplikasjon designet for å la ansatte sende inn
 
 1. **Klon Repositoriet:**
 
-git clone https://github.com/dittGithubBrukernavn/anonymt-forslagsboks-system.git
+```
+git clone https://github.com/DevrMichael/client.git
 cd anonymt-forslagsboks-system
+```
 
 2. **Sett opp Backend:**
 
