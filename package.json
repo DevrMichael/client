@@ -39,6 +39,12 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.0",
-    "@babel/preset-react": "^7.23.3"
+    "@babel/preset-react": "^7.23.3",
+    "babel-jest": "^29.7.0"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "^axios$": "axios/dist/node/axios.cjs"
+    }
   }
 }

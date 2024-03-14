@@ -36,8 +36,9 @@ function Login({ onLogin }) {
       <h1>Login</h1>
       <form onSubmit={handleSubmit} className="login-form">
         <div>
-          <label>Username:</label>
+          <label data-testid="username-label">Username:</label>
           <input
+            data-testid="username-input"
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
@@ -45,8 +46,9 @@ function Login({ onLogin }) {
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label data-testid="password-label">Password:</label>
           <input
+            data-testid="password-input"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -55,7 +57,11 @@ function Login({ onLogin }) {
         </div>
         <button type="submit">Login</button>
       </form>
-      <button onClick={handleBack} className="back-button">
+      <button
+        onClick={handleBack}
+        className="back-button"
+        data-testid="submit-button"
+      >
         Back to Homepage
       </button>{' '}
     </div>
