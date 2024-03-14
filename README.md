@@ -26,7 +26,6 @@ Dette prosjektet er en enkel webapplikasjon designet for å la ansatte sende inn
 ## Installasjon
 
 1. **Klon Repositoriet:**
-
 ```
 git clone https://github.com/DevrMichael/client.git
 cd anonymt-forslagsboks-system
@@ -35,24 +34,28 @@ cd anonymt-forslagsboks-system
 2. **Sett opp Backend:**
 
 Gå til servermappen og installer nødvendige avhengigheter:
-
+```
 cd server
 npm install
+```
 
 Start serveren:
-
+```
 npm start
+```
 
 3. **Sett opp Frontend:**
 
 Åpne en ny terminal. Gå til klientmappen fra roten av prosjektet og installer nødvendige avhengigheter:
-
+```
 cd client
 npm install
+```
 
 Start klientapplikasjonen:
-
+```
 npm start
+```
 
 Applikasjonen vil nå kjøre på `http://localhost:3000`.
 
