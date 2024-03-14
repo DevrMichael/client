@@ -61,4 +61,10 @@ Applikasjonen vil nå kjøre på `http://localhost:3000`.
 ## Bruk
 
 - **For Ansatte:** Naviger til hjemmesiden (`http://localhost:3000`) for å sende inn et anonymt forslag.
+
+For å logge inn som en ansatt, bruk brukernavnet `user` og passordet `userpassword`.
+
 - **For HR-personell:** Naviger til `/login` for å logge inn og se de innsendte forslagene.
+-
+- For å logge inn som HR-personell, bruk brukernavnet `hr` og passordet `password`.
+
