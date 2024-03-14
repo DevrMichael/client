@@ -1,58 +1,157 @@
+:root {
+  --primary-color: #0056b3;
+  --hover-color: #004494;
+  --background-color: #f0f2f5;
+  --error-color: #e02e1d;
+  --text-color: #333;
+  --input-background: #fff;
+  --input-border-color: #ddd;
+  --font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f0f2f5;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
   margin: 0;
   padding: 20px;
+  color: var(--text-color);
 }
 
 h1 {
-  color: #333;
+  text-align: center;
+  color: var(--text-color);
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
 button {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
   border: none;
   padding: 10px 20px;
-  margin-top: 10px;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: var(--hover-color);
 }
 
 form {
-  background-color: white;
+  background-color: var(--input-background);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
   max-width: 400px;
-  margin: 20px auto;
 }
 
 input[type='text'],
-input[type='password'],
-textarea {
-  width: 100%;
+input[type='password'] {
+  width: calc(100% - 20px);
   padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
   margin-top: 5px;
   margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  box-sizing: border-box;
 }
 
-ul {
+.back-button {
+  margin-top: 20px;
+}
+
+.suggestions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.suggestions-list {
   list-style-type: none;
   padding: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
-li {
-  background-color: white;
+.suggestions-list li {
+  background-color: var(--input-background);
+  color: var(--text-color);
   padding: 15px;
   margin-top: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--primary-color);
+}
+
+button[data-testid='logout-button'] {
+  align-self: flex-start;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.suggestion-form {
+  background-color: var(--input-background);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  height: 150px;
+  resize: vertical;
+}
+
+button[type='submit'],
+.logout-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+  width: 100%;
+}
+
+button[type='submit']:hover,
+.login-button:hover {
+  background-color: var(--hover-color);
+}
+
+.login-button {
+  align-self: center;
+}
+
+.logout-button {
+  background-color: var(--error-color);
 }

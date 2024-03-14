@@ -26,10 +26,16 @@ function HRView({ onLogout }) {
 
   return (
     <div className="suggestions-container">
-      <h1>HR View: Employee Suggestions</h1>
-      <button onClick={handleLogout} data-testid="logout-button">
-        Logout
-      </button>
+      <div className="header-container">
+        <button
+          onClick={handleLogout}
+          data-testid="logout-button"
+          className="logout-button"
+        >
+          Logout
+        </button>
+        <h1>HR View: Employee Suggestions</h1>
+      </div>
       <ul className="suggestions-list">
         {suggestions.map((suggestion, index) => (
           <li key={index}>{suggestion.suggestion}</li>

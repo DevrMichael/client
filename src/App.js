@@ -29,7 +29,7 @@ function App() {
             ) : userRole === 'hr' ? (
               <Navigate replace to="/hrview" />
             ) : (
-              <SuggestionForm />
+              <SuggestionForm onLogout={logout} />
             )
           }
         />

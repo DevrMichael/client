@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-function SuggestionForm() {
+function SuggestionForm({ onLogout }) {
   const navigate = useNavigate();
 
   const [suggestion, setSuggestion] = useState('');
@@ -18,8 +18,9 @@ function SuggestionForm() {
     }
   };
 
-  const handleLogin = () => {
-    navigate('/login'); // Navigate to the login page
+  const handleLogout = () => {
+    onLogout();
+    navigate('/login');
   };
 
   return (
@@ -32,15 +33,17 @@ function SuggestionForm() {
           placeholder="Enter your suggestion"
           required
         ></textarea>
-        <button type="submit">Submit Suggestion</button>
+        <button type="submit" className="submit-button">
+          Submit Suggestion
+        </button>
+        <button
+          onClick={handleLogout}
+          className="logout-button"
+          data-testid="submit-button"
+        >
+          Logout
+        </button>{' '}
       </form>
-      <button
-        onClick={handleLogin}
-        className="login-button"
-        data-testid="submit-button"
-      >
-        Login
-      </button>{' '}
     </div>
   );
 }
