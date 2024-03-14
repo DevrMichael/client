@@ -20,14 +20,14 @@ function HRView({ onLogout }) {
   };
 
   const handleLogout = () => {
-    onLogout(); // Call the logout function passed as a prop
-    navigate('/'); // Redirect to the home page or login page as appropriate
+    onLogout();
+    navigate('/');
   };
 
   return (
     <div className="suggestions-container">
       <h1>HR View: Employee Suggestions</h1>
-      <button onClick={handleLogout}>Logout</button> {/* Logout button */}
+      <button onClick={handleLogout}>Logout</button>
       <ul className="suggestions-list">
         {suggestions.map((suggestion, index) => (
           <li key={index}>{suggestion.suggestion}</li>

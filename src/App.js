@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './Login'; // Your login component
-import HRView from './HRView'; // Component for HR to view suggestions
-import SuggestionForm from './SuggestionForm'; // Component for users to submit suggestions
+import Login from './Login';
+import HRView from './HRView';
+import SuggestionForm from './SuggestionForm';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -10,12 +10,12 @@ function App() {
 
   const login = (authStatus, role) => {
     setIsAuthenticated(authStatus);
-    setUserRole(role); // Lagrer brukerens rolle
+    setUserRole(role);
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    setUserRole(null); // Fjerner brukerens rolle ved utlogging
+    setUserRole(null);
   };
 
   return (

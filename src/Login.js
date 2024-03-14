@@ -17,8 +17,8 @@ function Login({ onLogin }) {
       });
       if (response.data.isAuthenticated) {
         alert('Login Successful');
-        onLogin(true, response.data.role); // Oppdaterer onLogin for å inkludere rollen
-        response.data.role === 'hr' ? navigate('/hrview') : navigate('/'); // Naviger basert på rollen
+        onLogin(true, response.data.role);
+        response.data.role === 'hr' ? navigate('/hrview') : navigate('/');
       } else {
         alert('Login Failed');
       }
@@ -28,7 +28,7 @@ function Login({ onLogin }) {
   };
 
   const handleBack = () => {
-    navigate('/'); // Navigate back to the homepage
+    navigate('/');
   };
 
   return (
@@ -58,7 +58,6 @@ function Login({ onLogin }) {
       <button onClick={handleBack} className="back-button">
         Back to Homepage
       </button>{' '}
-      {/* Back to Homepage button */}
     </div>
   );
 }

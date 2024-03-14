@@ -37,7 +37,6 @@ function SuggestionForm() {
       <button onClick={handleLogin} className="login-button">
         Login
       </button>{' '}
-      {/* Login button */}
     </div>
   );
 }
