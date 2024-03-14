@@ -6,23 +6,38 @@ import SuggestionForm from './SuggestionForm'; // Component for users to submit 
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userRole, setUserRole] = useState(null);
+
+  const login = (authStatus, role) => {
+    setIsAuthenticated(authStatus);
+    setUserRole(role); // Lagrer brukerens rolle
+  };
 
   const logout = () => {
-    setIsAuthenticated(false); // Update the isAuthenticated state
-    // Optional: Redirect to login or another page
+    setIsAuthenticated(false);
+    setUserRole(null); // Fjerner brukerens rolle ved utlogging
   };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SuggestionForm />} />
-
-        <Route path="/login" element={<Login onLogin={setIsAuthenticated} />} />
-
+        <Route
+          path="/"
+          element={
+            !isAuthenticated ? (
+              <Navigate replace to="/login" />
+            ) : userRole === 'hr' ? (
+              <Navigate replace to="/hrview" />
+            ) : (
+              <SuggestionForm />
+            )
+          }
+        />
+        <Route path="/login" element={<Login onLogin={login} />} />
         <Route
           path="/hrview"
           element={
-            isAuthenticated ? (
+            isAuthenticated && userRole === 'hr' ? (
               <HRView onLogout={logout} />
             ) : (
               <Navigate replace to="/login" />

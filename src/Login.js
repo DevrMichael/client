@@ -17,8 +17,8 @@ function Login({ onLogin }) {
       });
       if (response.data.isAuthenticated) {
         alert('Login Successful');
-        onLogin(true); // Notify parent component
-        navigate('/hrview'); // Redirect to HR view
+        onLogin(true, response.data.role); // Oppdaterer onLogin for å inkludere rollen
+        response.data.role === 'hr' ? navigate('/hrview') : navigate('/'); // Naviger basert på rollen
       } else {
         alert('Login Failed');
       }
