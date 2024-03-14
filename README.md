@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Anonymt Forslagsboks System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Om Prosjektet
 
-## Available Scripts
+Dette prosjektet er en enkel webapplikasjon designet for å la ansatte sende inn anonyme forslag for å forbedre arbeidsmiljøet. HR-personell kan logge inn for å se og behandle disse forslagene.
 
-In the project directory, you can run:
+## Teknologier
 
-### `npm start`
+- **Frontend:** React
+- **Backend:** Express.js på Node.js
+- **Autentisering:** Enkel brukerrollebasert tilgangskontroll
+- **Database:** Forslag lagres midlertidig i serverens minne (ikke persistent)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Funksjoner
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Ansatte kan:
+  - Send inn anonyme forslag.
+- HR-personell kan:
+  - Logge inn for å se alle innsendte forslag.
+  - Logge ut.
 
-### `npm test`
+## Forutsetninger
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js og npm er installert på systemet ditt.
 
-### `npm run build`
+## Installasjon
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Klon Repositoriet:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+git clone https://github.com/dittGithubBrukernavn/anonymt-forslagsboks-system.git
+cd anonymt-forslagsboks-system
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Sett opp Backend:**
 
-### `npm run eject`
+Gå til servermappen og installer nødvendige avhengigheter:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd server
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start serveren:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm start
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Sett opp Frontend:**
 
-## Learn More
+Åpne en ny terminal. Gå til klientmappen fra roten av prosjektet og installer nødvendige avhengigheter:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd client
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start klientapplikasjonen:
 
-### Code Splitting
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Applikasjonen vil nå kjøre på `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+## Bruk
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **For Ansatte:** Naviger til hjemmesiden (`http://localhost:3000`) for å sende inn et anonymt forslag.
+- **For HR-personell:** Naviger til `/login` for å logge inn og se de innsendte forslagene.
