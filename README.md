@@ -28,14 +28,13 @@ Dette prosjektet er en enkel webapplikasjon designet for å la ansatte sende inn
 1. **Klon Repositoriet:**
 ```
 git clone https://github.com/DevrMichael/client.git
-cd anonymt-forslagsboks-system
+cd suggestion-box
 ```
 
 2. **Sett opp Backend:**
 
-Gå til servermappen og installer nødvendige avhengigheter:
+Gå installer nødvendige avhengigheter i rotmappen:
 ```
-cd server
 npm install
 ```
 
