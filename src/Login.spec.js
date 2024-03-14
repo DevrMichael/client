@@ -39,7 +39,7 @@ describe('Login Component', () => {
     expect(screen.getByTestId('password-input')).toHaveValue('password');
   });
 
-  fit('calls onLogin when the login button is clicked', async () => {
+  it('navigates to the homepage when the submit button is clicked', async () => {
     const mockOnLogin = jest.fn();
     render(<Login onLogin={mockOnLogin} />);
 

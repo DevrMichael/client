@@ -34,7 +34,11 @@ function SuggestionForm() {
         ></textarea>
         <button type="submit">Submit Suggestion</button>
       </form>
-      <button onClick={handleLogin} className="login-button">
+      <button
+        onClick={handleLogin}
+        className="login-button"
+        data-testid="submit-button"
+      >
         Login
       </button>{' '}
     </div>

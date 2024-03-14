@@ -42,7 +42,7 @@ describe('HRView Component', () => {
 
   it('calls onLogout and navigates to home on logout click', async () => {
     render(<HRView onLogout={mockOnLogout} />);
-    fireEvent.click(screen.getByRole('button', { name: /logout/i }));
+    fireEvent.click(screen.getByTestId('logout-button'));
 
     await waitFor(() => {
       expect(mockOnLogout).toHaveBeenCalled();
