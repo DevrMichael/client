@@ -25,7 +25,7 @@ function SuggestionForm({ onLogout }) {
 
   return (
     <div className="form-container">
-      <h1>Anonymt forslagsboks</h1>
+      <h1>Anonym forslagsboks</h1>
       <form onSubmit={handleSubmit} className="suggestion-form">
         <textarea
           value={suggestion}
