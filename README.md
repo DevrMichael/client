@@ -5,6 +5,12 @@ Link til server repositoriet for denne oppgaven: https://github.com/DevrMichael/
 
 Dette prosjektet er en enkel webapplikasjon designet for å la ansatte sende inn anonyme forslag for å forbedre arbeidsmiljøet. HR-personell kan logge inn for å se og behandle disse forslagene.
 
+<img width="890" alt="Skjermbilde 2024-03-18 kl  17 26 32" src="https://github.com/DevrMichael/client/assets/88589247/e852da72-d219-4d68-8788-ac20f384f991">
+<img width="890" alt="Skjermbilde 2024-03-18 kl  17 27 02" src="https://github.com/DevrMichael/client/assets/88589247/b24a2216-3e54-41f2-b974-8d5f8f809a07">
+<img width="890" alt="Skjermbilde 2024-03-18 kl  17 27 13" src="https://github.com/DevrMichael/client/assets/88589247/8ee3340e-0fdd-453d-8751-587d0eb4221e">
+
+
+
 ## Teknologier
 
 - **Frontend:** React
