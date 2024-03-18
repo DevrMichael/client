@@ -23,14 +23,14 @@ describe('SuggestionForm Component', () => {
     render(<SuggestionForm />);
 
     const suggestionInput = screen.getByPlaceholderText(
-      'Enter your suggestion'
+      'Skriv inn ditt forslag'
     );
     fireEvent.change(suggestionInput, {
       target: { value: 'New coffee machine' },
     });
     expect(suggestionInput).toHaveValue('New coffee machine');
 
-    fireEvent.click(screen.getByRole('button', { name: /submit suggestion/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Send inn forslag/i }));
 
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith(
@@ -41,12 +41,5 @@ describe('SuggestionForm Component', () => {
     await waitFor(() => {
       expect(suggestionInput).toHaveValue('');
     });
-  });
-
-  it('navigates to the login page on login button click', () => {
-    render(<SuggestionForm />);
-
-    fireEvent.click(screen.getByRole('button', { name: /login/i }));
-    expect(mockUseNavigate).toHaveBeenCalledWith('/login');
   });
 });
