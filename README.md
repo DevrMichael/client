@@ -35,22 +35,9 @@ Dette prosjektet er en enkel webapplikasjon designet for å la ansatte sende inn
 1. **Klon Repositoriet:**
 ```
 git clone https://github.com/DevrMichael/client.git
-cd suggestion-box
 ```
 
-2. **Sett opp Backend:**
-
-Gå installer nødvendige avhengigheter i rotmappen:
-```
-npm install
-```
-
-Start serveren:
-```
-npm start
-```
-
-3. **Sett opp Frontend:**
+2. **Sett opp Frontend:**
 
 Åpne en ny terminal. Gå til klientmappen fra roten av prosjektet og installer nødvendige avhengigheter:
 ```
